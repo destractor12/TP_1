@@ -2,11 +2,13 @@
 #include <stdlib.h>
 #include "funciones.h"
 
+
 int main()
 {
     char seguir='s';
     int opcion=0;
     char opcionOperaciones;
+    char opcionResultados;
     float numeroUno;
     float numeroDos;
     float suma=0;
@@ -14,6 +16,7 @@ int main()
     float multiplicacion=0;
     float division=0;
     int resultado;
+    int resultado2;
 
     do
     {
@@ -24,69 +27,87 @@ int main()
 
         switch(opcion)
         {
-            case 1: system("cls");
+        case 1:
+            system("cls");
             numeroUno=getfloat("Ingrese el 1er operando:");
             fflush(stdin);
             break;
 
-            case 2: system("cls");
+        case 2:
+            system("cls");
             numeroDos=getfloat("Ingrese el 2do operando:");
             fflush(stdin);
             break;
 
-            case 3: system("cls");
+        case 3:
+            system("cls");
             opcionOperaciones=mostrarMenudeOperaciones();
             switch(opcionOperaciones)
             {
-                case 'a': suma=SumarOperandos(numeroUno, numeroDos);
+            case 'a':
+                suma=SumarOperandos(numeroUno, numeroDos);
+
                 break;
 
-                case 'b': resta=restadeoperandos(numeroUno, numeroDos);
+            case 'b':
+                resta=restadeoperandos(numeroUno, numeroDos);
                 break;
 
-                case 'c': division=divisiondeoperandos(numeroUno, numeroDos);
+            case 'c':
+                division=divisiondeoperandos(numeroUno, numeroDos);
                 break;
 
-                case 'd': multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
+            case 'd':
+                multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
                 break;
 
-                case 'e': resultado=factorial(numeroUno);
-                resultado=factorial(numeroDos);
+            case 'e':
+                resultado=factorial(numeroUno);
+                resultado2=factorial(numeroDos);
                 break;
             }
-            /*
-            mostrarResultados(suma,"El resultado de la suma es: ");*/
+
             break;
-       /*      case 4:
+        case 4:
+            system("cls");
+            opcionOperaciones=mostrarMenudeOperaciones();
+            switch(opcionOperaciones)
+            {
+            case 'a':
+                suma=SumarOperandos(numeroUno, numeroDos);
 
                 break;
-            case 5:
 
-
+            case 'b':
+                resta=restadeoperandos(numeroUno, numeroDos);
                 break;
-            case 6:
 
-
+            case 'c':
+                division=divisiondeoperandos(numeroUno, numeroDos);
                 break;
-            case 7:
 
-
+            case 'd':
+                multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
                 break;
-            case 8: suma=SumarOperandos(numeroUno, numeroDos);
-            resta=restadeoperandos(numeroUno, numeroDos);
-            multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
-            division=divisiondeoperandos(numeroUno, numeroDos);
 
-                break;  */
-            case 5:
-
-                seguir = 'n';
+            case 'e':
+                resultado=factorial(numeroUno);
+                resultado2=factorial(numeroDos);
                 break;
+            }
+
+            break;
+
+        case 5:
+
+            seguir = 'n';
+            break;
         }
 
-   }while(seguir!='n');
+    }
+    while(seguir!='n');
 
-   return 0;
+    return 0;
 }
 
 

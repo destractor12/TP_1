@@ -12,3 +12,17 @@
 	<stdlib.h>
 	"funciones.h"
 
+1535811530 source:c:\users\alumno\desktop\tp_1\tp 1\tp 1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
+
+1535810470 c:\users\alumno\desktop\tp_1\tp 1\tp 1\funciones.h
+
+1535811480 source:c:\users\alumno\desktop\tp_1\tp 1\tp 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	<string.h>
+
