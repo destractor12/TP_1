@@ -6,19 +6,20 @@ int main()
 {
     char seguir='s';
     int opcion=0;
+    char opcionOperaciones;
     float numeroUno;
     float numeroDos;
     float suma=0;
     float resta=0;
     float multiplicacion=0;
     float division=0;
-
+    int resultado;
 
     do
     {
         system("cls");
-      fflush(stdin);
-      opcion=mostrarMenu();
+        fflush(stdin);
+        opcion=mostrarMenu(numeroUno,numeroDos);
 
 
         switch(opcion)
@@ -34,22 +35,40 @@ int main()
             break;
 
             case 3: system("cls");
-            suma=SumarOperandos(numeroUno, numeroDos);
-            mostrarResultados(suma,"El resultado de la suma es: ");
+            opcionOperaciones=mostrarMenudeOperaciones();
+            switch(opcionOperaciones)
+            {
+                case 'a': suma=SumarOperandos(numeroUno, numeroDos);
+                break;
+
+                case 'b': resta=restadeoperandos(numeroUno, numeroDos);
+                break;
+
+                case 'c': division=divisiondeoperandos(numeroUno, numeroDos);
+                break;
+
+                case 'd': multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
+                break;
+
+                case 'e': resultado=factorial(numeroUno);
+                resultado=factorial(numeroDos);
+                break;
+            }
+            /*
+            mostrarResultados(suma,"El resultado de la suma es: ");*/
             break;
-       /*      case 4: resta=restadeoperandos(numeroUno, numeroDos);
+       /*      case 4:
+
+                break;
+            case 5:
 
 
                 break;
-            case 5: multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
+            case 6:
 
 
                 break;
-            case 6: division=divisiondeoperandos(numeroUno, numeroDos);
-
-
-                break;
-            case 7:resultado=factorial(numeroUno!numeroDos);
+            case 7:
 
 
                 break;
@@ -59,7 +78,7 @@ int main()
             division=divisiondeoperandos(numeroUno, numeroDos);
 
                 break;  */
-            case 9:
+            case 5:
 
                 seguir = 'n';
                 break;
@@ -71,11 +90,3 @@ int main()
 }
 
 
-int validarEntero(int numero,char texto[],int min,int max);
-{
-    while(numero<min || numero>max)
-    {
-        printf("Reingrese %s",texto)
-    }
-    return numero;
-}
