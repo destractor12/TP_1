@@ -16,6 +16,8 @@ int mostrarMenu(float num1,float num2)
     printf("Ingrese una opcion: ");
     scanf("%d",&opcion);
 
+    opcion=validarEntero(opcion,"una opcion: ",1,5);
+
     return opcion;
 
 }
@@ -77,7 +79,7 @@ void mostrarResultados(float re, char mensaje[])
     printf("%s %f",mensaje,re);
 }
 
-void mostrarResultatres(int re,char mensaje[])
+void mostrarResultatres( int re,char mensaje[])
 {
     if(re==1||re==0)
     {
@@ -89,7 +91,7 @@ void mostrarResultatres(int re,char mensaje[])
     }
     else
     {
-         printf("%s %d",mensaje,re);
+         printf("%s %060d",mensaje,re);
     }
 
 }
@@ -119,6 +121,7 @@ int pedirEntero(char texto[],int min,int max)
 
 int factorial(float num)
 {
+    fflush(stdin);
     int numerofactorizado=1;
     int i;
 
@@ -144,7 +147,8 @@ int validarEntero(int numero,char texto[],int min,int max)
 {
     while(numero<min || numero>max)
     {
-        printf("Reingrese %s",texto);
+
+        printf("\nReingrese %s",texto);
         scanf("%d",&numero);
     }
     return numero;
