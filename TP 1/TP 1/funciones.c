@@ -10,60 +10,14 @@ int mostrarMenu(float num1,float num2)
 
     printf("1. Ingresar 1er operando (A= %.2f)\n",num1);
     printf("2. Ingresar 2do operando (B= %.2f)\n",num2);
-    printf("\n3. Calcular todas las operaciones\n");
-    printf("a) Calcular la suma (A+B)\n");
-    printf("b) Calcular la resta (A-B)\n");
-    printf("c) Calcular la division (A/B)\n");
-    printf("d) Calcular la multiplicacion (A*B)\n");
-    printf("e) Calcular el factorial (A!)\n");
-    printf("\n4. Informar resultados\n");
-    printf("a) El resultado de A+B es: r\n");
-    printf("b) El resultado de A-B es: r\n");
-    printf("c) El resultado de A/B es: r o No es posible dividir por cero\n");
-    printf("d) El resultado de A*B es: r\n");
-    printf("e) El factorial de A es: r1 y El factorial de B es: r2\n");
+    printf("3. Calcular todas las operaciones\n");
+    printf("4. Informar resultados\n");
     printf("5. Salir\n");
     printf("Ingrese una opcion: ");
     scanf("%d",&opcion);
 
     return opcion;
 
-}
-
-char mostrarMenudeOperaciones()
-{
-    char opcion;
-
-    printf("a) Calcular la suma (A+B)\n");
-    printf("b) Calcular la resta (A-B)\n");
-    printf("c) Calcular la division (A/B)\n");
-    printf("d) Calcular la multiplicacion (A*B)\n");
-    printf("e) Calcular el factorial (A!)\n");
-    printf("Ingrese una opcion: ");
-    fflush(stdin);
-    scanf("%c",&opcion);
-    tolower(opcion);
-
-    if(opcion != 'a' && opcion != 'b'&& opcion != 'c'&& opcion != 'd'&& opcion != 'e')
-    {
-
-
-        do
-        {
-            system("cls");
-            printf("a) Calcular la suma (A+B)\n");
-            printf("b) Calcular la resta (A-B)\n");
-            printf("c) Calcular la division (A/B)\n");
-            printf("d) Calcular la multiplicacion (A*B)\n");
-            printf("e) Calcular el factorial (A!)\n");
-            printf("Reingrese una opcion: ");
-            fflush(stdin);
-            scanf("%c",&opcion);
-        }
-        while(opcion != 'a'|| opcion != 'b'|| opcion != 'c'|| opcion != 'd'|| opcion != 'e');
-    }
-
-    return opcion;
 }
 
 float getfloat(char mensaje[])
@@ -120,9 +74,24 @@ float multiplicaciondeoperandos(float num1,float num2)
 
 void mostrarResultados(float re, char mensaje[])
 {
-    getchar();
-    printf("Entro");
     printf("%s %f",mensaje,re);
+}
+
+void mostrarResultatres(int re,char mensaje[])
+{
+    if(re==1||re==0)
+    {
+            printf("\nel factorial es: 1");
+    }
+    else if(re<0)
+    {
+        printf("es un numero negativo");
+    }
+    else
+    {
+         printf("%s %d",mensaje,re);
+    }
+
 }
 
 char getletra(char m[])
@@ -150,12 +119,23 @@ int pedirEntero(char texto[],int min,int max)
 
 int factorial(float num)
 {
-    int numerofactorizado;
+    int numerofactorizado=1;
     int i;
 
-    for(i=num; i>=num; i--)
+    if((int)num==1||(int)num==0)
     {
-        numerofactorizado= num*(num-1);
+        numerofactorizado=1;
+    }
+    else if((int)num<0)
+    {
+        printf("El numero ingresado es negativo");
+    }
+    else
+    {
+        for(i=1;i<=(int)num;i++)
+        {
+            numerofactorizado=numerofactorizado*i;
+        }
     }
     return numerofactorizado;
 }

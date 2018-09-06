@@ -7,8 +7,6 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    char opcionOperaciones;
-    char opcionResultados;
     float numeroUno;
     float numeroDos;
     float suma=0;
@@ -41,63 +39,31 @@ int main()
 
         case 3:
             system("cls");
-            opcionOperaciones=mostrarMenudeOperaciones();
-            switch(opcionOperaciones)
-            {
-            case 'a':
-                suma=SumarOperandos(numeroUno, numeroDos);
 
-                break;
+            suma=SumarOperandos(numeroUno, numeroDos);
 
-            case 'b':
-                resta=restadeoperandos(numeroUno, numeroDos);
-                break;
+            resta=restadeoperandos(numeroUno, numeroDos);
 
-            case 'c':
-                division=divisiondeoperandos(numeroUno, numeroDos);
-                break;
+            division=divisiondeoperandos(numeroUno, numeroDos);
 
-            case 'd':
-                multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
-                break;
+            multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
 
-            case 'e':
-                resultado=factorial(numeroUno);
-                resultado2=factorial(numeroDos);
-                break;
-            }
+            resultado=factorial(numeroUno);
+
+            resultado2=factorial(numeroDos);
 
             break;
         case 4:
             system("cls");
-            opcionOperaciones=mostrarMenudeOperaciones();
-            switch(opcionOperaciones)
-            {
-            case 'a':
-                suma=SumarOperandos(numeroUno, numeroDos);
 
-                break;
-
-            case 'b':
-                resta=restadeoperandos(numeroUno, numeroDos);
-                break;
-
-            case 'c':
-                division=divisiondeoperandos(numeroUno, numeroDos);
-                break;
-
-            case 'd':
-                multiplicacion=multiplicaciondeoperandos(numeroUno, numeroDos);
-                break;
-
-            case 'e':
-                resultado=factorial(numeroUno);
-                resultado2=factorial(numeroDos);
-                break;
-            }
-
+            mostrarResultados( suma, "a) El resultado de A+B es: ");
+            mostrarResultados( resta, "\nb) El resultado de A-B es: ");
+            mostrarResultados( division, "\nc) El resultado de A/B es: ");
+            mostrarResultados( multiplicacion, "\nd) El resultado de A*B es: ");
+            mostrarResultatres(resultado,"\ne) El factorial de A es: ");
+            mostrarResultatres(resultado2," y El factorial de B es:");
+            system("\npause");
             break;
-
         case 5:
 
             seguir = 'n';

@@ -8,13 +8,6 @@
 
 int mostrarMenu(float,float);
 
-/** \brief muestra el menu de opciones para las operaciones a ejecutar
- *
- * \return char devuelve la opcion elgida por el usuario
- *
- */
-char mostrarMenudeOperaciones();
-
 /** \brief le pide al usuario que ingrese un numero
  *
  * \param char[] mensaje que se le muestra al usuario
@@ -39,6 +32,8 @@ float divisiondeoperandos(float,float);
 float multiplicaciondeoperandos(float,float);
 
 void mostrarResultados(float,char[]);
+
+void mostrarResultatres(int,char[]);
 
 char getletra(char[]);
 
